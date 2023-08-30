@@ -6,9 +6,6 @@ When you log into the system, the authentication engine uses the same mathematic
 
 Pass-the-Hash is a technique used by attackers by capturing the password hash instead of the password characters and then passing it through for authentication & lateral access to other network systems.
 
-
-
-
 The PtK attack as it is sometimes called exploits the authentication protocol - since the password hash remains static for every session unless rotated/modified.
 
 While Pass-the-Hash attacks can occur on Linux, Unix, and other platforms, they are most prevalent on Windows systems.
@@ -24,6 +21,8 @@ Steps to prevent a pass-the-hash attack in your network
 3. Enable Windows Defender Credential Guard.
 4. Use Firewalls to Block Unnecessary Traffic.
 5. Do not log into a workstation with a privileged account.
+
+asp.net-password-hashing.jpg
 
 
 References:
