@@ -1,0 +1,31 @@
+Pass-the-Hash 🛡- Yes! 📢"the hash is the password" 🏍 🔔   
+
+When you assign a password to a system, that password is not actually stored on the system. Instead, the operating system uses a mathematical formula to compute a hash for the password. The hash is what is stored, not the actual password.
+
+When you log into the system, the authentication engine uses the same mathematical formula to compute a hash for the password that you entered and compares it to the stored hash. If the two hashes match one another then the password is assumed to be correct, and access is granted.
+
+Pass-the-Hash is a technique used by attackers by capturing the password hash instead of the password characters and then passing it through for authentication & lateral access to other network systems.
+
+
+
+
+The PtK attack as it is sometimes called exploits the authentication protocol - since the password hash remains static for every session unless rotated/modified.
+
+While Pass-the-Hash attacks can occur on Linux, Unix, and other platforms, they are most prevalent on Windows systems.
+
+In Windows,Ptk exploits - Single Sign-On (SSO) through NT Lan Manager(NTLM), Kerberos and other authentication protocols.
+
+When a password is created in Windows, it is hashed and stored in the Security Accounts Manager (SAM), Local Security Authority Subsystem (LSASS) process memory, the Credential Manager (CredMan) store, a ntds.dit database in Active Directory, or elsewhere. When a user logs onto a Windows workstation or server, they essentially leave behind their password credentials.
+
+Steps to prevent a pass-the-hash attack in your network
+
+1. Use Least Privilege Security Model to limit and mitigate the impact of PtH by reducing attackers privilege access and permission.
+2. Use of one-time-passwords (OTPs) can also mitigate PtH threats, since an OTP may only be valid for a single login session.
+3. Enable Windows Defender Credential Guard.
+4. Use Firewalls to Block Unnecessary Traffic.
+5. Do not log into a workstation with a privileged account.
+
+
+References:
+1. https://www.beyondtrust.com/resources/glossary/pass-the-hash-pth-attack.
+2. https://www.bleepingcomputer.com/news/security/pass-the-hash-attacks-and-how-to-prevent-them-in-windows-domains/
